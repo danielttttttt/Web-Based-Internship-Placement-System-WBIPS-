@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - WBIPS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/auth.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="auth-body">
+    <!-- Navigation Header -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="../index.html" style="display: flex; align-items: center; gap: 0.5rem; text-decoration: none; color: inherit;">
+                    <i class="fas fa-graduation-cap"></i>
+                    <span>WBIPS</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="../index.html" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Back to Home
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Registration Section -->
+    <section class="auth-section">
+        <div class="auth-container">
+            <!-- Left Side - Registration Form -->
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <h1>Create Account</h1>
+                    <p>Join WBIPS and start your internship journey today</p>
+                </div>
+
+                <!-- Role Selection -->
+                <div class="role-selection-tabs">
+                    <div class="tab-buttons">
+                        <button type="button" class="tab-btn active" data-role="student">
+                            <i class="fas fa-user-graduate"></i>
+                            Student
+                        </button>
+                        <button type="button" class="tab-btn" data-role="company">
+                            <i class="fas fa-building"></i>
+                            Company
+                        </button>
+                        <button type="button" class="tab-btn" data-role="coordinator">
+                            <i class="fas fa-user-tie"></i>
+                            Coordinator
+                        </button>
+                    </div>
+                </div>
+
+                <form class="auth-form" id="registerForm">
+                    <input type="hidden" id="userRole" name="role" value="student">
+
+                    <!-- Common Fields -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="firstName">First Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="firstName" name="firstName" placeholder="Enter first name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="lastName" name="lastName" placeholder="Enter last name" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <div class="input-group">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <div class="input-group">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter phone number" required>
+                        </div>
+                    </div>
+
+                    <!-- Student-specific fields -->
+                    <div class="role-fields" id="studentFields">
+                        <div class="form-group">
+                            <label for="university">University</label>
+                            <div class="input-group">
+                                <i class="fas fa-university"></i>
+                                <select id="university" name="university" required>
+                                    <option value="">Select University</option>
+                                    <option value="st-mary">St. Mary University</option>
+                                    <option value="addis-ababa">Addis Ababa University</option>
+                                    <option value="jimma">Jimma University</option>
+                                    <option value="hawassa">Hawassa University</option>
+                                    <option value="bahir-dar">Bahir Dar University</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <div class="input-group">
+                                <i class="fas fa-graduation-cap"></i>
+                                <select id="department" name="department" required>
+                                    <option value="">Select Department</option>
+                                    <option value="computer-science">Computer Science</option>
+                                    <option value="software-engineering">Software Engineering</option>
+                                    <option value="information-systems">Information Systems</option>
+                                    <option value="electrical-engineering">Electrical Engineering</option>
+                                    <option value="mechanical-engineering">Mechanical Engineering</option>
+                                    <option value="civil-engineering">Civil Engineering</option>
+                                    <option value="business-administration">Business Administration</option>
+                                    <option value="accounting">Accounting</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="studentId">Student ID</label>
+                            <div class="input-group">
+                                <i class="fas fa-id-card"></i>
+                                <input type="text" id="studentId" name="studentId" placeholder="Enter student ID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company-specific fields -->
+                    <div class="role-fields hidden" id="companyFields">
+                        <div class="form-group">
+                            <label for="companyName">Company Name</label>
+                            <div class="input-group">
+                                <i class="fas fa-building"></i>
+                                <input type="text" id="companyName" name="companyName" placeholder="Enter company name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="industry">Industry</label>
+                            <div class="input-group">
+                                <i class="fas fa-industry"></i>
+                                <select id="industry" name="industry">
+                                    <option value="">Select Industry</option>
+                                    <option value="technology">Technology</option>
+                                    <option value="finance">Finance & Banking</option>
+                                    <option value="healthcare">Healthcare</option>
+                                    <option value="education">Education</option>
+                                    <option value="manufacturing">Manufacturing</option>
+                                    <option value="retail">Retail</option>
+                                    <option value="consulting">Consulting</option>
+                                    <option value="telecommunications">Telecommunications</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="companySize">Company Size</label>
+                            <div class="input-group">
+                                <i class="fas fa-users"></i>
+                                <select id="companySize" name="companySize">
+                                    <option value="">Select Company Size</option>
+                                    <option value="1-10">1-10 employees</option>
+                                    <option value="11-50">11-50 employees</option>
+                                    <option value="51-200">51-200 employees</option>
+                                    <option value="201-500">201-500 employees</option>
+                                    <option value="500+">500+ employees</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Coordinator-specific fields -->
+                    <div class="role-fields hidden" id="coordinatorFields">
+                        <div class="form-group">
+                            <label for="coordinatorUniversity">University</label>
+                            <div class="input-group">
+                                <i class="fas fa-university"></i>
+                                <select id="coordinatorUniversity" name="coordinatorUniversity">
+                                    <option value="">Select University</option>
+                                    <option value="st-mary">St. Mary University</option>
+                                    <option value="addis-ababa">Addis Ababa University</option>
+                                    <option value="jimma">Jimma University</option>
+                                    <option value="hawassa">Hawassa University</option>
+                                    <option value="bahir-dar">Bahir Dar University</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="faculty">Faculty/Department</label>
+                            <div class="input-group">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                                <input type="text" id="faculty" name="faculty" placeholder="Enter faculty/department">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="employeeId">Employee ID</label>
+                            <div class="input-group">
+                                <i class="fas fa-id-badge"></i>
+                                <input type="text" id="employeeId" name="employeeId" placeholder="Enter employee ID">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Password Fields -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="password" name="password" placeholder="Create password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('password')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirmPassword">Confirm Password</label>
+                            <div class="input-group">
+                                <i class="fas fa-lock"></i>
+                                <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm password" required>
+                                <button type="button" class="password-toggle" onclick="togglePassword('confirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Terms and Conditions -->
+                    <div class="form-group">
+                        <label class="checkbox-container">
+                            <input type="checkbox" name="terms" required>
+                            <span class="checkmark"></span>
+                            I agree to the <a href="#" target="_blank">Terms of Service</a> and <a href="#" target="_blank">Privacy Policy</a>
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-user-plus"></i>
+                        Create Account
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html">Sign In</a></p>
+                </div>
+            </div>
+
+            <!-- Right Side - Information -->
+            <div class="auth-info-container">
+                <div class="auth-info">
+                    <div class="info-icon">
+                        <i class="fas fa-rocket"></i>
+                    </div>
+                    <h2>Start Your Journey</h2>
+                    <p>Join the WBIPS community and unlock opportunities that will shape your future. Whether you're a student seeking internships, a company looking for talent, or a coordinator managing placements, we've got you covered.</p>
+                    
+                    <div class="info-features">
+                        <div class="info-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Free registration for all users</span>
+                        </div>
+                        <div class="info-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Instant access to opportunities</span>
+                        </div>
+                        <div class="info-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Secure and verified platform</span>
+                        </div>
+                        <div class="info-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>24/7 support available</span>
+                        </div>
+                    </div>
+
+                    <div class="registration-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2,500+</div>
+                            <div class="stat-label">Students Registered</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">150+</div>
+                            <div class="stat-label">Partner Companies</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">95%</div>
+                            <div class="stat-label">Success Rate</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Creating your account...</p>
+        </div>
+    </div>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/auth.js"></script>
+    <script>
+        // Initialize registration page
+        document.addEventListener('DOMContentLoaded', function() {
+            initRoleTabs();
+            initRegistrationForm();
+            checkUrlParams();
+        });
+
+        function initRoleTabs() {
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const roleFields = document.querySelectorAll('.role-fields');
+            const userRoleInput = document.getElementById('userRole');
+
+            tabButtons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const role = this.dataset.role;
+                    
+                    // Update active tab
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show/hide role-specific fields
+                    roleFields.forEach(field => field.classList.add('hidden'));
+                    const targetFields = document.getElementById(role + 'Fields');
+                    if (targetFields) {
+                        targetFields.classList.remove('hidden');
+                    }
+                    
+                    // Update hidden input
+                    userRoleInput.value = role;
+                    
+                    // Update required fields
+                    updateRequiredFields(role);
+                });
+            });
+        }
+
+        function updateRequiredFields(role) {
+            // Remove required from all role-specific fields
+            document.querySelectorAll('.role-fields input, .role-fields select').forEach(field => {
+                field.removeAttribute('required');
+            });
+            
+            // Add required to active role fields
+            const activeFields = document.getElementById(role + 'Fields');
+            if (activeFields) {
+                activeFields.querySelectorAll('input, select').forEach(field => {
+                    if (field.name !== 'studentId' && field.name !== 'employeeId') {
+                        field.setAttribute('required', 'required');
+                    }
+                });
+            }
+        }
+
+        function initRegistrationForm() {
+            const form = document.getElementById('registerForm');
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                handleRegistration(this);
+            });
+        }
+
+        function handleRegistration(form) {
+            const formData = new FormData(form);
+            const password = formData.get('password');
+            const confirmPassword = formData.get('confirmPassword');
+            
+            // Validate passwords match
+            if (password !== confirmPassword) {
+                showNotification('Passwords do not match', 'error');
+                return;
+            }
+            
+            // Validate password strength
+            if (!isValidPassword(password)) {
+                showNotification('Password must be at least 8 characters long and contain uppercase, lowercase, and numbers', 'error');
+                return;
+            }
+            
+            // Show loading
+            showLoading();
+            
+            // Simulate API call
+            setTimeout(() => {
+                hideLoading();
+                
+                // Mock registration success
+                const userData = {
+                    email: formData.get('email'),
+                    role: formData.get('role'),
+                    firstName: formData.get('firstName'),
+                    lastName: formData.get('lastName'),
+                    registrationTime: new Date().toISOString()
+                };
+                
+                localStorage.setItem('userSession', JSON.stringify(userData));
+                showNotification('Registration successful! Redirecting to dashboard...', 'success');
+                
+                setTimeout(() => {
+                    redirectToDashboard(userData.role);
+                }, 2000);
+            }, 3000);
+        }
+
+        function checkUrlParams() {
+            const urlRole = getUrlParameter('role');
+            if (urlRole && ['student', 'company', 'coordinator'].includes(urlRole)) {
+                const tabBtn = document.querySelector(`[data-role="${urlRole}"]`);
+                if (tabBtn) {
+                    tabBtn.click();
+                }
+            }
+        }
+
+        function isValidPassword(password) {
+            const minLength = 8;
+            const hasUpperCase = /[A-Z]/.test(password);
+            const hasLowerCase = /[a-z]/.test(password);
+            const hasNumbers = /\d/.test(password);
+            
+            return password.length >= minLength && hasUpperCase && hasLowerCase && hasNumbers;
+        }
+
+        function togglePassword(inputId) {
+            const input = document.getElementById(inputId);
+            const toggle = input.parentNode.querySelector('.password-toggle i');
+            
+            if (input.type === 'password') {
+                input.type = 'text';
+                toggle.classList.remove('fa-eye');
+                toggle.classList.add('fa-eye-slash');
+            } else {
+                input.type = 'password';
+                toggle.classList.remove('fa-eye-slash');
+                toggle.classList.add('fa-eye');
+            }
+        }
+
+        function redirectToDashboard(role) {
+            const dashboardUrls = {
+                student: 'student-dashboard.html',
+                company: 'company-dashboard.html',
+                coordinator: 'coordinator-dashboard.html'
+            };
+            
+            window.location.href = dashboardUrls[role] || 'student-dashboard.html';
+        }
+
+        function showLoading() {
+            document.getElementById('loadingOverlay').style.display = 'flex';
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard - WBIPS</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/responsive.css">
+    <link rel="stylesheet" href="../assets/css/dashboard.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="dashboard-body">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">
+            <div class="sidebar-logo">
+                <i class="fas fa-graduation-cap"></i>
+                <span>WBIPS</span>
+            </div>
+            <button class="sidebar-toggle" id="sidebarToggle">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <nav class="sidebar-nav">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#dashboard" class="nav-link active" data-section="dashboard">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#internships" class="nav-link" data-section="internships">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Browse Internships</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#applications" class="nav-link" data-section="applications">
+                        <i class="fas fa-file-alt"></i>
+                        <span>My Applications</span>
+                        <span class="badge">3</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#reports" class="nav-link" data-section="reports">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Progress Reports</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#profile" class="nav-link" data-section="profile">
+                        <i class="fas fa-user"></i>
+                        <span>Profile</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#notifications" class="nav-link" data-section="notifications">
+                        <i class="fas fa-bell"></i>
+                        <span>Notifications</span>
+                        <span class="badge">5</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        <div class="sidebar-footer">
+            <div class="user-info">
+                <div class="user-avatar">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="user-details">
+                    <div class="user-name">John Doe</div>
+                    <div class="user-role">Student</div>
+                </div>
+            </div>
+            <button class="logout-btn" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Top Header -->
+        <header class="top-header">
+            <div class="header-left">
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h1 class="page-title">Dashboard</h1>
+            </div>
+            <div class="header-right">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search internships...">
+                </div>
+                <div class="header-actions">
+                    <button class="action-btn" title="Notifications">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-dot"></span>
+                    </button>
+                    <button class="action-btn" title="Messages">
+                        <i class="fas fa-envelope"></i>
+                    </button>
+                    <div class="user-menu">
+                        <button class="user-menu-btn">
+                            <div class="user-avatar">
+                                <i class="fas fa-user"></i>
+                            </div>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="content-area">
+            <!-- Dashboard Section -->
+            <section class="content-section active" id="dashboard-section">
+                <div class="dashboard-grid">
+                    <!-- Stats Cards -->
+                    <div class="stats-row">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">12</div>
+                                <div class="stat-label">Available Internships</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-paper-plane"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Applications Sent</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Pending Reviews</div>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="stat-content">
+                                <div class="stat-number">1</div>
+                                <div class="stat-label">Approved</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Recent Activity</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="activity-list">
+                            <div class="activity-item">
+                                <div class="activity-icon success">
+                                    <i class="fas fa-check"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Application Approved</div>
+                                    <div class="activity-desc">Your application to TechCorp has been approved</div>
+                                    <div class="activity-time">2 hours ago</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon info">
+                                    <i class="fas fa-paper-plane"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Application Submitted</div>
+                                    <div class="activity-desc">Applied for Software Developer Intern at StartupXYZ</div>
+                                    <div class="activity-time">1 day ago</div>
+                                </div>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-icon warning">
+                                    <i class="fas fa-exclamation"></i>
+                                </div>
+                                <div class="activity-content">
+                                    <div class="activity-title">Document Required</div>
+                                    <div class="activity-desc">Please upload your CV for the DataCorp application</div>
+                                    <div class="activity-time">2 days ago</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card">
+                        <div class="card-header">
+                            <h3>Quick Actions</h3>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="quick-action-btn" onclick="showSection('internships')">
+                                <i class="fas fa-search"></i>
+                                <span>Find Internships</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="showSection('applications')">
+                                <i class="fas fa-file-alt"></i>
+                                <span>View Applications</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="showSection('profile')">
+                                <i class="fas fa-user-edit"></i>
+                                <span>Update Profile</span>
+                            </button>
+                            <button class="quick-action-btn" onclick="showSection('reports')">
+                                <i class="fas fa-chart-bar"></i>
+                                <span>Submit Report</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Recommended Internships -->
+                    <div class="dashboard-card full-width">
+                        <div class="card-header">
+                            <h3>Recommended for You</h3>
+                            <a href="#" class="view-all">View All</a>
+                        </div>
+                        <div class="internship-grid">
+                            <div class="internship-card">
+                                <div class="company-logo">
+                                    <i class="fas fa-building"></i>
+                                </div>
+                                <div class="internship-info">
+                                    <h4>Software Developer Intern</h4>
+                                    <div class="company-name">TechCorp Solutions</div>
+                                    <div class="internship-meta">
+                                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa</span>
+                                        <span><i class="fas fa-clock"></i> 3 months</span>
+                                        <span><i class="fas fa-calendar"></i> Starts Jan 2024</span>
+                                    </div>
+                                </div>
+                                <div class="internship-actions">
+                                    <button class="btn btn-primary btn-small">Apply Now</button>
+                                    <button class="btn btn-outline btn-small">View Details</button>
+                                </div>
+                            </div>
+                            <div class="internship-card">
+                                <div class="company-logo">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <div class="internship-info">
+                                    <h4>Data Analyst Intern</h4>
+                                    <div class="company-name">DataCorp Analytics</div>
+                                    <div class="internship-meta">
+                                        <span><i class="fas fa-map-marker-alt"></i> Addis Ababa</span>
+                                        <span><i class="fas fa-clock"></i> 4 months</span>
+                                        <span><i class="fas fa-calendar"></i> Starts Feb 2024</span>
+                                    </div>
+                                </div>
+                                <div class="internship-actions">
+                                    <button class="btn btn-primary btn-small">Apply Now</button>
+                                    <button class="btn btn-outline btn-small">View Details</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Other sections will be added here -->
+            <section class="content-section" id="internships-section">
+                <div class="section-header">
+                    <h2>Browse Internships</h2>
+                    <p>Find the perfect internship opportunity for your career</p>
+                </div>
+                <!-- Internship browsing content will be added here -->
+            </section>
+
+            <section class="content-section" id="applications-section">
+                <div class="section-header">
+                    <h2>My Applications</h2>
+                    <p>Track the status of your internship applications</p>
+                </div>
+                <!-- Applications content will be added here -->
+            </section>
+
+            <section class="content-section" id="reports-section">
+                <div class="section-header">
+                    <h2>Progress Reports</h2>
+                    <p>Submit and view your internship progress reports</p>
+                </div>
+                <!-- Reports content will be added here -->
+            </section>
+
+            <section class="content-section" id="profile-section">
+                <div class="section-header">
+                    <h2>Profile Settings</h2>
+                    <p>Manage your account information and preferences</p>
+                </div>
+                <!-- Profile content will be added here -->
+            </section>
+
+            <section class="content-section" id="notifications-section">
+                <div class="section-header">
+                    <h2>Notifications</h2>
+                    <p>Stay updated with the latest news and updates</p>
+                </div>
+                <!-- Notifications content will be added here -->
+            </section>
+        </div>
+    </main>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/dashboard.js"></script>
+</body>
+</html>
