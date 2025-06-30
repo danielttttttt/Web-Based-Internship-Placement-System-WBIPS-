@@ -11,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initChatWidget();
     initClock();
     initFeatureDemo();
+    initParallaxEffects();
+    initEnhancedHoverEffects();
 });
 
 // ===== ENHANCED ANIMATIONS =====
@@ -424,4 +426,64 @@ function getDirections() {
 
 function openInMaps() {
     window.open('https://maps.google.com/?q=St.+Mary+University+Addis+Ababa', '_blank');
+}
+
+// ===== PARALLAX EFFECTS =====
+function initParallaxEffects() {
+    const parallaxElements = document.querySelectorAll('.parallax');
+
+    if (parallaxElements.length > 0) {
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const rate = scrolled * -0.5;
+
+            parallaxElements.forEach(element => {
+                element.style.transform = `translateY(${rate}px)`;
+            });
+        });
+    }
+}
+
+// ===== ENHANCED HOVER EFFECTS =====
+function initEnhancedHoverEffects() {
+    // Add magnetic effect to buttons
+    const magneticElements = document.querySelectorAll('.btn-primary, .feature-card, .dashboard-card');
+
+    magneticElements.forEach(element => {
+        element.addEventListener('mousemove', (e) => {
+            const rect = element.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            element.style.transform = `translate(${x * 0.1}px, ${y * 0.1}px)`;
+        });
+
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'translate(0px, 0px)';
+        });
+    });
+
+    // Add ripple effect to buttons
+    const rippleButtons = document.querySelectorAll('.btn');
+
+    rippleButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const ripple = document.createElement('span');
+            const rect = button.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = e.clientX - rect.left - size / 2;
+            const y = e.clientY - rect.top - size / 2;
+
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.classList.add('ripple');
+
+            button.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    });
 }

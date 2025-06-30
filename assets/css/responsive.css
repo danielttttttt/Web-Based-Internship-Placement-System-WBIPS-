@@ -5,17 +5,25 @@
     .container {
         max-width: 1200px;
     }
-    
+
     .hero-title {
-        font-size: 3.5rem;
+        font-size: var(--font-size-6xl);
     }
-    
+
     .features-grid {
         grid-template-columns: repeat(3, 1fr);
     }
-    
+
     .roles-grid {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .hero-dashboard {
+        max-width: 500px;
+    }
+
+    .feature-card {
+        padding: var(--spacing-12);
     }
 }
 
