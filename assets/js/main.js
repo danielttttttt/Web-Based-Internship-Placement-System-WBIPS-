@@ -44,12 +44,16 @@ function initNavigation() {
     // Navbar scroll effect
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
-        if (window.scrollY > 100) {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
-            navbar.style.backdropFilter = 'blur(10px)';
+        if (window.scrollY > 50) {
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            navbar.style.backdropFilter = 'blur(25px)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
+            navbar.style.borderBottom = '1px solid rgba(5, 150, 105, 0.2)';
         } else {
-            navbar.style.backgroundColor = 'var(--white)';
-            navbar.style.backdropFilter = 'none';
+            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            navbar.style.backdropFilter = 'blur(20px)';
+            navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
+            navbar.style.borderBottom = '1px solid rgba(5, 150, 105, 0.1)';
         }
     });
 }
