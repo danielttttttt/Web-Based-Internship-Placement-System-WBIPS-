@@ -430,7 +430,7 @@ function openInMaps() {
 
 // ===== PARALLAX EFFECTS =====
 function initParallaxEffects() {
-    const parallaxElements = document.querySelectorAll('.parallax');
+    const parallaxElements = document.querySelectorAll('.parallax:not(.footer):not(.footer *)');
 
     if (parallaxElements.length > 0) {
         window.addEventListener('scroll', () => {
@@ -438,7 +438,10 @@ function initParallaxEffects() {
             const rate = scrolled * -0.5;
 
             parallaxElements.forEach(element => {
-                element.style.transform = `translateY(${rate}px)`;
+                // Ensure we're not affecting footer elements
+                if (!element.closest('.footer')) {
+                    element.style.transform = `translateY(${rate}px)`;
+                }
             });
         });
     }

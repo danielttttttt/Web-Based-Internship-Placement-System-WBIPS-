@@ -1367,13 +1367,16 @@ p {
 
 /* ===== PROFESSIONAL FOOTER ===== */
 .footer {
-    background: linear-gradient(135deg, var(--gray-900) 0%, #1a202c 100%);
-    color: var(--white);
+    background: linear-gradient(135deg, var(--gray-900) 0%, #1a202c 100%) !important;
+    color: var(--white) !important;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-main {
     padding: var(--spacing-20) 0 var(--spacing-12);
     position: relative;
+    background: transparent !important;
 }
 
 .footer-main::before {
@@ -1588,6 +1591,22 @@ p {
 
 .footer-bottom-links a:hover {
     color: var(--secondary-color);
+}
+
+/* Footer Protection - Prevent unwanted style changes */
+.footer,
+.footer *,
+.footer-main,
+.footer-bottom {
+    background-color: inherit !important;
+}
+
+.footer {
+    background: linear-gradient(135deg, var(--gray-900) 0%, #1a202c 100%) !important;
+}
+
+.footer-bottom {
+    background-color: rgba(0, 0, 0, 0.3) !important;
 }
 
 /* ===== ENHANCED UTILITY CLASSES ===== */
