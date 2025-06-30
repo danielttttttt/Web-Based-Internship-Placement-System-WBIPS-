@@ -41,19 +41,21 @@ function initNavigation() {
         }
     });
 
-    // Navbar scroll effect
+    // Navbar scroll effect - Keep green theme
     window.addEventListener('scroll', function() {
         const navbar = document.querySelector('.navbar');
         if (window.scrollY > 50) {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.98)';
+            // Scrolled state - darker green with more opacity
+            navbar.style.backgroundColor = 'rgba(5, 150, 105, 0.98)';
             navbar.style.backdropFilter = 'blur(25px)';
-            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.1)';
-            navbar.style.borderBottom = '1px solid rgba(5, 150, 105, 0.2)';
+            navbar.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            navbar.style.borderBottom = '1px solid rgba(52, 211, 153, 0.3)';
         } else {
-            navbar.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+            // Top state - original green with transparency
+            navbar.style.backgroundColor = 'rgba(5, 150, 105, 0.95)';
             navbar.style.backdropFilter = 'blur(20px)';
             navbar.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.1)';
-            navbar.style.borderBottom = '1px solid rgba(5, 150, 105, 0.1)';
+            navbar.style.borderBottom = '1px solid rgba(52, 211, 153, 0.2)';
         }
     });
 }
