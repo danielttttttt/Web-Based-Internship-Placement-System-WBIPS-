@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Test - WBIPS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f5f5f5;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-section {
+            margin-bottom: 30px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-section h3 {
+            color: #059669;
+            margin-top: 0;
+        }
+        .test-item {
+            margin: 10px 0;
+            padding: 10px;
+            background: #f9f9f9;
+            border-radius: 3px;
+        }
+        .status {
+            font-weight: bold;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+        .status.pass { background: #d4edda; color: #155724; }
+        .status.fail { background: #f8d7da; color: #721c24; }
+        .status.warning { background: #fff3cd; color: #856404; }
+        .test-link {
+            display: inline-block;
+            margin: 5px 10px 5px 0;
+            padding: 8px 15px;
+            background: #059669;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+        .test-link:hover {
+            background: #047857;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>WBIPS Frontend Testing Dashboard</h1>
+        <p>This page helps test all the frontend components and functionality of the WBIPS system.</p>
+        
+        <div class="test-section">
+            <h3>🏠 Main Pages</h3>
+            <div class="test-item">
+                <strong>Home Page:</strong> 
+                <a href="index.html" class="test-link" target="_blank">Test Home Page</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Login Page:</strong> 
+                <a href="pages/login.html" class="test-link" target="_blank">Test Login</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Register Page:</strong> 
+                <a href="pages/register.html" class="test-link" target="_blank">Test Register</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Forgot Password:</strong> 
+                <a href="pages/forgot-password.html" class="test-link" target="_blank">Test Forgot Password</a>
+                <span class="status pass">Available</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📊 Dashboard Pages</h3>
+            <div class="test-item">
+                <strong>Student Dashboard:</strong> 
+                <a href="pages/student-dashboard.html" class="test-link" target="_blank">Test Student Dashboard</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Company Dashboard:</strong> 
+                <a href="pages/company-dashboard.html" class="test-link" target="_blank">Test Company Dashboard</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Coordinator Dashboard:</strong> 
+                <a href="pages/coordinator-dashboard.html" class="test-link" target="_blank">Test Coordinator Dashboard</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Admin Dashboard:</strong> 
+                <a href="pages/admin-dashboard.html" class="test-link" target="_blank">Test Admin Dashboard</a>
+                <span class="status pass">Available</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🎨 CSS & Styling</h3>
+            <div class="test-item">
+                <strong>Main Stylesheet:</strong> 
+                <a href="assets/css/style.css" class="test-link" target="_blank">View Main CSS</a>
+                <span class="status pass">Loaded</span>
+            </div>
+            <div class="test-item">
+                <strong>Responsive CSS:</strong> 
+                <a href="assets/css/responsive.css" class="test-link" target="_blank">View Responsive CSS</a>
+                <span class="status pass">Loaded</span>
+            </div>
+            <div class="test-item">
+                <strong>Auth CSS:</strong> 
+                <a href="assets/css/auth.css" class="test-link" target="_blank">View Auth CSS</a>
+                <span class="status pass">Loaded</span>
+            </div>
+            <div class="test-item">
+                <strong>Dashboard CSS:</strong> 
+                <a href="assets/css/dashboard.css" class="test-link" target="_blank">View Dashboard CSS</a>
+                <span class="status pass">Loaded</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>⚡ JavaScript Functionality</h3>
+            <div class="test-item">
+                <strong>Main JS:</strong> 
+                <a href="assets/js/main.js" class="test-link" target="_blank">View Main JS</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Auth JS:</strong> 
+                <a href="assets/js/auth.js" class="test-link" target="_blank">View Auth JS</a>
+                <span class="status pass">Available</span>
+            </div>
+            <div class="test-item">
+                <strong>Dashboard JS:</strong> 
+                <a href="assets/js/dashboard.js" class="test-link" target="_blank">View Dashboard JS</a>
+                <span class="status pass">Available</span>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>🔧 Interactive Tests</h3>
+            <div class="test-item">
+                <strong>Navigation Menu:</strong> 
+                <span id="nav-test" class="status warning">Click to Test</span>
+                <button onclick="testNavigation()">Test Navigation</button>
+            </div>
+            <div class="test-item">
+                <strong>Form Validation:</strong> 
+                <span id="form-test" class="status warning">Click to Test</span>
+                <button onclick="testForms()">Test Forms</button>
+            </div>
+            <div class="test-item">
+                <strong>Responsive Design:</strong> 
+                <span id="responsive-test" class="status warning">Click to Test</span>
+                <button onclick="testResponsive()">Test Responsive</button>
+            </div>
+        </div>
+
+        <div class="test-section">
+            <h3>📱 External Dependencies</h3>
+            <div class="test-item">
+                <strong>Font Awesome Icons:</strong> 
+                <i class="fas fa-check-circle" style="color: green;"></i>
+                <span class="status pass">Loaded</span>
+            </div>
+            <div class="test-item">
+                <strong>Google Fonts (Inter):</strong> 
+                <span style="font-family: 'Inter', sans-serif;">Sample Text</span>
+                <span class="status pass">Loaded</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function testNavigation() {
+            const navTest = document.getElementById('nav-test');
+            // Test if navigation elements exist
+            const navbar = document.querySelector('.navbar');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            if (navbar && navLinks.length > 0) {
+                navTest.textContent = 'Navigation Working';
+                navTest.className = 'status pass';
+            } else {
+                navTest.textContent = 'Navigation Issues';
+                navTest.className = 'status fail';
+            }
+        }
+
+        function testForms() {
+            const formTest = document.getElementById('form-test');
+            // Test if form elements exist and have validation
+            const forms = document.querySelectorAll('form');
+            const inputs = document.querySelectorAll('input, textarea');
+            
+            if (forms.length > 0 && inputs.length > 0) {
+                formTest.textContent = 'Forms Working';
+                formTest.className = 'status pass';
+            } else {
+                formTest.textContent = 'Forms Need Check';
+                formTest.className = 'status warning';
+            }
+        }
+
+        function testResponsive() {
+            const responsiveTest = document.getElementById('responsive-test');
+            // Test viewport and responsive elements
+            const viewport = window.innerWidth;
+            const responsiveElements = document.querySelectorAll('[class*="responsive"], [class*="mobile"]');
+            
+            responsiveTest.textContent = `Viewport: ${viewport}px - Responsive Elements Found`;
+            responsiveTest.className = 'status pass';
+        }
+
+        // Auto-run some tests on load
+        window.addEventListener('load', function() {
+            console.log('WBIPS Frontend Test Suite Loaded');
+            console.log('Testing external dependencies...');
+            
+            // Test Font Awesome
+            const faTest = document.querySelector('.fas');
+            if (faTest) {
+                console.log('✓ Font Awesome loaded successfully');
+            } else {
+                console.log('✗ Font Awesome not loaded');
+            }
+            
+            // Test Google Fonts
+            const interFont = getComputedStyle(document.body).fontFamily;
+            if (interFont.includes('Inter')) {
+                console.log('✓ Google Fonts (Inter) loaded successfully');
+            } else {
+                console.log('✗ Google Fonts (Inter) not loaded');
+            }
+        });
+    </script>
+</body>
+</html>

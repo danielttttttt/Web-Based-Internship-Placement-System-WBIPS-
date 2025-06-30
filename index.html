@@ -6,6 +6,7 @@
     <title>WBIPS - Web-Based Internship Placement System</title>
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="assets/css/animations.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
@@ -81,217 +82,595 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
+    <!-- Enhanced Hero Section -->
     <section id="home" class="hero">
+        <!-- Animated Background -->
         <div class="hero-background">
             <div class="hero-shapes">
                 <div class="shape shape-1"></div>
                 <div class="shape shape-2"></div>
                 <div class="shape shape-3"></div>
             </div>
+            <!-- Floating Particles -->
+            <div class="particles">
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+                <div class="particle"></div>
+            </div>
+            <!-- Gradient Animation -->
+            <div class="gradient-animation"></div>
         </div>
+
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-badge">
-                    <i class="fas fa-star"></i>
-                    <span>Trusted by 10+ Ethiopian Universities</span>
+                <div class="hero-badge animate-fade-in">
+                    <i class="fas fa-star pulse"></i>
+                    <span class="typing-text">Trusted by 10+ Ethiopian Universities</span>
                 </div>
-                <h1 class="hero-title">
+                <h1 class="hero-title animate-slide-up">
                     Your Gateway to
-                    <span class="highlight">Professional Success</span>
+                    <span class="highlight gradient-text">Professional Success</span>
                 </h1>
-                <p class="hero-description">
+                <p class="hero-description animate-slide-up delay-1">
                     WBIPS revolutionizes internship placement in Ethiopia. Connect talented students with leading companies,
                     streamline applications, and build the future workforce through our innovative digital platform.
                 </p>
-                <div class="hero-stats">
+
+                <!-- Enhanced Animated Stats -->
+                <div class="hero-stats animate-slide-up delay-2">
                     <div class="stat-item">
-                        <div class="stat-number">2,500+</div>
+                        <div class="stat-number" data-target="2500">0</div>
                         <div class="stat-label">Students</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="85%"></div>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">150+</div>
+                        <div class="stat-number" data-target="150">0</div>
                         <div class="stat-label">Companies</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="75%"></div>
+                        </div>
                     </div>
                     <div class="stat-item">
-                        <div class="stat-number">95%</div>
+                        <div class="stat-number" data-target="95">0</div>
                         <div class="stat-label">Success Rate</div>
+                        <div class="stat-progress">
+                            <div class="progress-bar" data-width="95%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="hero-buttons">
-                    <a href="pages/register.html" class="btn btn-primary btn-large">
-                        <i class="fas fa-rocket"></i>
-                        Start Your Journey
+
+                <!-- Enhanced Action Buttons -->
+                <div class="hero-buttons animate-slide-up delay-3">
+                    <a href="pages/register.html" class="btn btn-primary btn-large btn-animated">
+                        <span class="btn-content">
+                            <i class="fas fa-rocket"></i>
+                            Start Your Journey
+                        </span>
+                        <div class="btn-ripple"></div>
                     </a>
-                    <a href="pages/login.html" class="btn btn-outline-white btn-large">
-                        <i class="fas fa-sign-in-alt"></i>
-                        Sign In
+                    <a href="pages/login.html" class="btn btn-outline-white btn-large btn-animated">
+                        <span class="btn-content">
+                            <i class="fas fa-sign-in-alt"></i>
+                            Sign In
+                        </span>
+                        <div class="btn-ripple"></div>
                     </a>
                 </div>
             </div>
-            <div class="hero-visual">
-                <div class="hero-dashboard">
+            <!-- Enhanced Hero Visual -->
+            <div class="hero-visual animate-slide-right">
+                <div class="hero-dashboard interactive-dashboard">
                     <div class="dashboard-header">
                         <div class="dashboard-nav">
-                            <div class="nav-dot active"></div>
+                            <div class="nav-dot active pulse"></div>
                             <div class="nav-dot"></div>
                             <div class="nav-dot"></div>
                         </div>
                         <div class="dashboard-title">WBIPS Dashboard</div>
+                        <div class="dashboard-time">
+                            <span id="current-time"></span>
+                        </div>
                     </div>
                     <div class="dashboard-content">
-                        <div class="dashboard-card">
+                        <div class="dashboard-card hover-lift" data-tilt>
                             <div class="card-icon">
                                 <i class="fas fa-briefcase"></i>
                             </div>
                             <div class="card-info">
-                                <div class="card-number">24</div>
+                                <div class="card-number counter" data-target="24">0</div>
                                 <div class="card-label">Active Internships</div>
                             </div>
+                            <div class="card-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+12%</span>
+                            </div>
                         </div>
-                        <div class="dashboard-card">
+                        <div class="dashboard-card hover-lift" data-tilt>
                             <div class="card-icon">
                                 <i class="fas fa-users"></i>
                             </div>
                             <div class="card-info">
-                                <div class="card-number">156</div>
+                                <div class="card-number counter" data-target="156">0</div>
                                 <div class="card-label">Applications</div>
+                            </div>
+                            <div class="card-trend positive">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+8%</span>
                             </div>
                         </div>
                         <div class="dashboard-progress">
-                            <div class="progress-label">Placement Progress</div>
-                            <div class="progress-bar">
-                                <div class="progress-fill"></div>
+                            <div class="progress-header">
+                                <span>Placement Progress</span>
+                                <span class="progress-percentage">87% Complete</span>
                             </div>
-                            <div class="progress-text">87% Complete</div>
+                            <div class="progress-bar animated-progress">
+                                <div class="progress-fill" data-width="87%"></div>
+                            </div>
+                        </div>
+                        <!-- New Activity Feed -->
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <span>New application received</span>
+                                <span class="activity-time">2m ago</span>
+                            </div>
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <span>Interview scheduled</span>
+                                <span class="activity-time">5m ago</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Enhanced Floating Cards -->
                 <div class="floating-elements">
-                    <div class="floating-card card-1">
+                    <div class="floating-card card-1 bounce-in">
                         <i class="fas fa-graduation-cap"></i>
                         <span>Student Portal</span>
+                        <div class="card-glow"></div>
                     </div>
-                    <div class="floating-card card-2">
+                    <div class="floating-card card-2 bounce-in delay-1">
                         <i class="fas fa-building"></i>
                         <span>Company Hub</span>
+                        <div class="card-glow"></div>
                     </div>
-                    <div class="floating-card card-3">
+                    <div class="floating-card card-3 bounce-in delay-2">
                         <i class="fas fa-chart-line"></i>
                         <span>Analytics</span>
+                        <div class="card-glow"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
+    <!-- Enhanced Features Section -->
     <section id="features" class="features">
         <div class="container">
             <div class="section-header">
-                <div class="section-badge">
-                    <i class="fas fa-sparkles"></i>
+                <div class="section-badge animate-fade-in">
+                    <i class="fas fa-sparkles pulse"></i>
                     <span>Powerful Features</span>
                 </div>
-                <h2>Everything You Need for Successful Internship Placement</h2>
-                <p>Our comprehensive platform provides cutting-edge tools designed specifically for Ethiopian universities, students, and companies</p>
+                <h2 class="animate-slide-up">Everything You Need for Successful Internship Placement</h2>
+                <p class="animate-slide-up delay-1">Our comprehensive platform provides cutting-edge tools designed specifically for Ethiopian universities, students, and companies</p>
             </div>
+
+            <!-- Interactive Feature Demo -->
+            <div class="feature-demo animate-slide-up delay-2">
+                <div class="demo-tabs">
+                    <button class="demo-tab active" data-demo="students">For Students</button>
+                    <button class="demo-tab" data-demo="companies">For Companies</button>
+                    <button class="demo-tab" data-demo="coordinators">For Coordinators</button>
+                </div>
+                <div class="demo-content">
+                    <div class="demo-panel active" id="demo-students">
+                        <div class="demo-preview">
+                            <img src="assets/images/student-demo.png" alt="Student Dashboard Preview" class="demo-image">
+                            <div class="demo-overlay">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Watch Demo</span>
+                            </div>
+                        </div>
+                        <div class="demo-features">
+                            <h3>Student Experience</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Browse 500+ internship opportunities</li>
+                                <li><i class="fas fa-check"></i> One-click application with CV upload</li>
+                                <li><i class="fas fa-check"></i> Real-time application tracking</li>
+                                <li><i class="fas fa-check"></i> Automated interview scheduling</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="demo-panel" id="demo-companies">
+                        <div class="demo-preview">
+                            <img src="assets/images/company-demo.png" alt="Company Dashboard Preview" class="demo-image">
+                            <div class="demo-overlay">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Watch Demo</span>
+                            </div>
+                        </div>
+                        <div class="demo-features">
+                            <h3>Company Portal</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Post internships in minutes</li>
+                                <li><i class="fas fa-check"></i> AI-powered candidate matching</li>
+                                <li><i class="fas fa-check"></i> Streamlined interview process</li>
+                                <li><i class="fas fa-check"></i> Performance analytics dashboard</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="demo-panel" id="demo-coordinators">
+                        <div class="demo-preview">
+                            <img src="assets/images/coordinator-demo.png" alt="Coordinator Dashboard Preview" class="demo-image">
+                            <div class="demo-overlay">
+                                <i class="fas fa-play-circle"></i>
+                                <span>Watch Demo</span>
+                            </div>
+                        </div>
+                        <div class="demo-features">
+                            <h3>Coordinator Tools</h3>
+                            <ul>
+                                <li><i class="fas fa-check"></i> Comprehensive oversight dashboard</li>
+                                <li><i class="fas fa-check"></i> Automated report generation</li>
+                                <li><i class="fas fa-check"></i> Student progress monitoring</li>
+                                <li><i class="fas fa-check"></i> University partnership management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Features Grid -->
             <div class="features-grid">
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Multi-Role Access</h3>
                     <p>Separate dashboards for students, companies, coordinators, and administrators with role-based permissions.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-search"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Smart Search</h3>
                     <p>Advanced filtering and search capabilities to find internships by field, location, and duration.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-file-alt"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Application Management</h3>
                     <p>Streamlined application process with document upload and status tracking.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-bell"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Real-time Notifications</h3>
                     <p>Instant alerts for application updates, deadlines, and important announcements.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-chart-bar"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Progress Tracking</h3>
                     <p>Monitor internship progress with weekly reports and coordinator feedback.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
-                <div class="feature-card">
+                <div class="feature-card interactive-card" data-tilt>
                     <div class="feature-icon">
                         <i class="fas fa-shield-alt"></i>
+                        <div class="icon-bg"></div>
                     </div>
                     <h3>Secure Platform</h3>
                     <p>Enterprise-grade security with encrypted data and secure authentication.</p>
+                    <div class="feature-hover">
+                        <span>Learn More</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- User Roles Section -->
-    <section id="about" class="user-roles">
+    <!-- Enhanced About Us Section -->
+    <section id="about" class="about-us">
+        <div class="container">
+            <!-- Our Story -->
+            <div class="story-section">
+                <div class="section-header">
+                    <div class="section-badge animate-fade-in">
+                        <i class="fas fa-heart"></i>
+                        <span>Our Story</span>
+                    </div>
+                    <h2 class="animate-slide-up">Transforming Ethiopia's Internship Landscape</h2>
+                    <p class="animate-slide-up delay-1">Founded with a vision to bridge the gap between education and industry, WBIPS has become Ethiopia's leading internship placement platform.</p>
+                </div>
+
+                <!-- Company Timeline -->
+                <div class="timeline animate-slide-up delay-2">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2020 - Foundation</h4>
+                            <p>WBIPS was founded to address the internship placement challenges in Ethiopian universities.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2021 - First Partnerships</h4>
+                            <p>Partnered with 5 universities and 25 companies for our pilot program.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2022 - Platform Launch</h4>
+                            <p>Officially launched the digital platform with 500+ students and 50+ companies.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content">
+                            <h4>2023 - Expansion</h4>
+                            <p>Expanded to 15+ universities with 2,500+ students and 150+ partner companies.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team Section -->
+            <div class="team-section">
+                <div class="section-header">
+                    <h2 class="animate-slide-up">Meet Our Team</h2>
+                    <p class="animate-slide-up delay-1">The passionate individuals behind WBIPS success</p>
+                </div>
+                <div class="team-grid">
+                    <div class="team-card animate-slide-up delay-2" data-tilt>
+                        <div class="team-image">
+                            <img src="assets/images/team/ceo.jpg" alt="CEO">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Dr. Abebe Tadesse</h4>
+                            <p>Chief Executive Officer</p>
+                            <span>15+ years in education technology</span>
+                        </div>
+                    </div>
+                    <div class="team-card animate-slide-up delay-3" data-tilt>
+                        <div class="team-image">
+                            <img src="assets/images/team/cto.jpg" alt="CTO">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-github"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Meron Bekele</h4>
+                            <p>Chief Technology Officer</p>
+                            <span>Software architect & AI specialist</span>
+                        </div>
+                    </div>
+                    <div class="team-card animate-slide-up delay-4" data-tilt>
+                        <div class="team-image">
+                            <img src="assets/images/team/head-partnerships.jpg" alt="Head of Partnerships">
+                            <div class="team-overlay">
+                                <div class="social-links">
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-twitter"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="team-info">
+                            <h4>Samuel Girma</h4>
+                            <p>Head of Partnerships</p>
+                            <span>University & corporate relations expert</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Roles Section -->
+            <div class="user-roles-section">
+                <div class="section-header">
+                    <h2 class="animate-slide-up">Who Can Use WBIPS?</h2>
+                    <p class="animate-slide-up delay-1">Designed for all stakeholders in the internship ecosystem</p>
+                </div>
+                <div class="roles-grid">
+                    <div class="role-card interactive-role-card" data-tilt>
+                        <div class="role-icon">
+                            <i class="fas fa-user-graduate"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Students</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Browse available internships</li>
+                            <li><i class="fas fa-check"></i> Apply with digital documents</li>
+                            <li><i class="fas fa-check"></i> Track application status</li>
+                            <li><i class="fas fa-check"></i> Submit progress reports</li>
+                            <li><i class="fas fa-check"></i> Receive notifications</li>
+                        </ul>
+                        <a href="pages/register.html?role=student" class="btn btn-outline btn-animated">
+                            <span>Register as Student</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="role-card interactive-role-card" data-tilt>
+                        <div class="role-icon">
+                            <i class="fas fa-building"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Companies</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Post internship opportunities</li>
+                            <li><i class="fas fa-check"></i> Review student applications</li>
+                            <li><i class="fas fa-check"></i> Manage intern placements</li>
+                            <li><i class="fas fa-check"></i> Provide feedback and evaluations</li>
+                            <li><i class="fas fa-check"></i> Access qualified candidates</li>
+                        </ul>
+                        <a href="pages/register.html?role=company" class="btn btn-outline btn-animated">
+                            <span>Register as Company</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="role-card interactive-role-card" data-tilt>
+                        <div class="role-icon">
+                            <i class="fas fa-user-tie"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <h3>Coordinators</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Approve student applications</li>
+                            <li><i class="fas fa-check"></i> Monitor internship progress</li>
+                            <li><i class="fas fa-check"></i> Evaluate final reports</li>
+                            <li><i class="fas fa-check"></i> Generate placement reports</li>
+                            <li><i class="fas fa-check"></i> Manage university partnerships</li>
+                        </ul>
+                        <a href="pages/register.html?role=coordinator" class="btn btn-outline btn-animated">
+                            <span>Register as Coordinator</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials">
         <div class="container">
             <div class="section-header">
-                <h2>Who Can Use WBIPS?</h2>
-                <p>Designed for all stakeholders in the internship ecosystem</p>
+                <div class="section-badge animate-fade-in">
+                    <i class="fas fa-quote-left"></i>
+                    <span>Success Stories</span>
+                </div>
+                <h2 class="animate-slide-up">What Our Users Say</h2>
+                <p class="animate-slide-up delay-1">Real experiences from students, companies, and coordinators who have found success through WBIPS</p>
             </div>
-            <div class="roles-grid">
-                <div class="role-card">
-                    <div class="role-icon">
-                        <i class="fas fa-user-graduate"></i>
+
+            <div class="testimonials-carousel">
+                <div class="testimonial-track">
+                    <div class="testimonial-card active">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"WBIPS transformed my internship search. I found my dream internship at Ethiopian Airlines within a week of registering. The platform is intuitive and the support team is amazing!"</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonials/student1.jpg" alt="Hanan Mohammed">
+                                <div class="author-info">
+                                    <h4>Hanan Mohammed</h4>
+                                    <span>Computer Science Student, AAU</span>
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/ethiopian-airlines.png" alt="Ethiopian Airlines">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <h3>Students</h3>
-                    <ul>
-                        <li>Browse available internships</li>
-                        <li>Apply with digital documents</li>
-                        <li>Track application status</li>
-                        <li>Submit progress reports</li>
-                        <li>Receive notifications</li>
-                    </ul>
-                    <a href="pages/register.html?role=student" class="btn btn-outline">Register as Student</a>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"As an HR manager, WBIPS has streamlined our intern recruitment process. We've hired 15 exceptional interns this year, and the quality of candidates has been outstanding."</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonials/company1.jpg" alt="Sarah Tekle">
+                                <div class="author-info">
+                                    <h4>Sarah Tekle</h4>
+                                    <span>HR Manager, Commercial Bank of Ethiopia</span>
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/cbe.png" alt="CBE">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"WBIPS has revolutionized how we manage internships at our university. The reporting features and student tracking capabilities have made our job so much easier."</p>
+                            <div class="testimonial-author">
+                                <img src="assets/images/testimonials/coordinator1.jpg" alt="Dr. Alemayehu Worku">
+                                <div class="author-info">
+                                    <h4>Dr. Alemayehu Worku</h4>
+                                    <span>Internship Coordinator, St. Mary's University</span>
+                                    <div class="company-logo">
+                                        <img src="assets/images/companies/smu.png" alt="SMU">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="role-card">
-                    <div class="role-icon">
-                        <i class="fas fa-building"></i>
+
+                <div class="testimonial-controls">
+                    <button class="testimonial-btn prev" onclick="changeTestimonial(-1)">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <div class="testimonial-dots">
+                        <span class="dot active" onclick="currentTestimonial(1)"></span>
+                        <span class="dot" onclick="currentTestimonial(2)"></span>
+                        <span class="dot" onclick="currentTestimonial(3)"></span>
                     </div>
-                    <h3>Companies</h3>
-                    <ul>
-                        <li>Post internship opportunities</li>
-                        <li>Review student applications</li>
-                        <li>Manage intern placements</li>
-                        <li>Provide feedback and evaluations</li>
-                        <li>Access qualified candidates</li>
-                    </ul>
-                    <a href="pages/register.html?role=company" class="btn btn-outline">Register as Company</a>
-                </div>
-                <div class="role-card">
-                    <div class="role-icon">
-                        <i class="fas fa-user-tie"></i>
-                    </div>
-                    <h3>Coordinators</h3>
-                    <ul>
-                        <li>Approve student applications</li>
-                        <li>Monitor internship progress</li>
-                        <li>Evaluate final reports</li>
-                        <li>Generate placement reports</li>
-                        <li>Manage university partnerships</li>
-                    </ul>
-                    <a href="pages/register.html?role=coordinator" class="btn btn-outline">Register as Coordinator</a>
+                    <button class="testimonial-btn next" onclick="changeTestimonial(1)">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
         </div>
@@ -341,50 +720,243 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Enhanced Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <div class="section-header">
-                <h2>Get In Touch</h2>
-                <p>Have questions? We're here to help you get started</p>
+                <div class="section-badge animate-fade-in">
+                    <i class="fas fa-envelope"></i>
+                    <span>Get In Touch</span>
+                </div>
+                <h2 class="animate-slide-up">Ready to Transform Your Internship Experience?</h2>
+                <p class="animate-slide-up delay-1">Have questions? We're here to help you get started on your journey to success</p>
             </div>
+
             <div class="contact-content">
+                <!-- Enhanced Contact Info Cards -->
                 <div class="contact-info">
-                    <div class="contact-item">
-                        <i class="fas fa-envelope"></i>
-                        <div>
-                            <h4>Email</h4>
+                    <div class="contact-card animate-slide-up delay-2" data-tilt>
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Email Us</h4>
                             <p>support@wbips.edu.et</p>
+                            <span>We'll respond within 24 hours</span>
+                        </div>
+                        <div class="contact-action">
+                            <a href="mailto:support@wbips.edu.et" class="contact-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-phone"></i>
-                        <div>
-                            <h4>Phone</h4>
+
+                    <div class="contact-card animate-slide-up delay-3" data-tilt>
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Call Us</h4>
                             <p>+251-11-123-4567</p>
+                            <span>Mon-Fri, 8AM-6PM EAT</span>
+                        </div>
+                        <div class="contact-action">
+                            <a href="tel:+251111234567" class="contact-btn">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
-                    <div class="contact-item">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <h4>Address</h4>
+
+                    <div class="contact-card animate-slide-up delay-4" data-tilt>
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="icon-bg"></div>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Visit Us</h4>
                             <p>St. Mary University<br>Addis Ababa, Ethiopia</p>
+                            <span>Building A, 3rd Floor</span>
+                        </div>
+                        <div class="contact-action">
+                            <a href="#" class="contact-btn" onclick="openMap()">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+
+                <!-- Enhanced Multi-step Form -->
+                <div class="contact-form-container animate-slide-up delay-5">
+                    <div class="form-header">
+                        <h3>Send us a Message</h3>
+                        <p>Tell us how we can help you</p>
+                    </div>
+
+                    <form class="multi-step-form" id="contactForm">
+                        <!-- Step 1: Basic Info -->
+                        <div class="form-step active" data-step="1">
+                            <div class="step-header">
+                                <h4>Basic Information</h4>
+                                <span class="step-indicator">Step 1 of 3</span>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                    <div class="input-focus"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                    <div class="input-focus"></div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                                <div class="input-focus"></div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-primary next-step">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+
+                        <!-- Step 2: Role & Purpose -->
+                        <div class="form-step" data-step="2">
+                            <div class="step-header">
+                                <h4>Tell us about yourself</h4>
+                                <span class="step-indicator">Step 2 of 3</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="role">I am a...</label>
+                                <select id="role" name="role" required>
+                                    <option value="">Select your role</option>
+                                    <option value="student">Student</option>
+                                    <option value="company">Company Representative</option>
+                                    <option value="coordinator">University Coordinator</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="input-focus"></div>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject">Subject</label>
+                                <select id="subject" name="subject" required>
+                                    <option value="">What can we help you with?</option>
+                                    <option value="general">General Inquiry</option>
+                                    <option value="technical">Technical Support</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="demo">Request Demo</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div class="input-focus"></div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-outline prev-step">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="button" class="btn btn-primary next-step">
+                                    Next <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <textarea placeholder="Your Message" rows="5" required></textarea>
+
+                        <!-- Step 3: Message -->
+                        <div class="form-step" data-step="3">
+                            <div class="step-header">
+                                <h4>Your Message</h4>
+                                <span class="step-indicator">Step 3 of 3</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tell us more about your inquiry..." required></textarea>
+                                <div class="input-focus"></div>
+                                <div class="char-counter">
+                                    <span id="charCount">0</span>/500 characters
+                                </div>
+                            </div>
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-outline prev-step">
+                                    <i class="fas fa-arrow-left"></i> Previous
+                                </button>
+                                <button type="submit" class="btn btn-primary submit-btn">
+                                    <span class="btn-text">Send Message</span>
+                                    <span class="btn-loading">
+                                        <i class="fas fa-spinner fa-spin"></i> Sending...
+                                    </span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </button>
+                            </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+
+                        <!-- Progress Bar -->
+                        <div class="form-progress">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 33.33%"></div>
+                            </div>
+                        </div>
                     </form>
+                </div>
+            </div>
+
+            <!-- Interactive Map -->
+            <div class="map-section animate-slide-up delay-6">
+                <div class="map-header">
+                    <h3>Find Us</h3>
+                    <p>Visit our office in Addis Ababa</p>
+                </div>
+                <div class="map-container">
+                    <div id="map" class="interactive-map"></div>
+                    <div class="map-overlay">
+                        <div class="map-info">
+                            <h4>WBIPS Headquarters</h4>
+                            <p>St. Mary University Campus<br>Building A, 3rd Floor<br>Addis Ababa, Ethiopia</p>
+                            <div class="map-actions">
+                                <button class="btn btn-outline btn-sm" onclick="getDirections()">
+                                    <i class="fas fa-directions"></i> Get Directions
+                                </button>
+                                <button class="btn btn-primary btn-sm" onclick="openInMaps()">
+                                    <i class="fas fa-external-link-alt"></i> Open in Maps
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Live Chat Widget -->
+        <div class="chat-widget" id="chatWidget">
+            <div class="chat-button" onclick="toggleChat()">
+                <i class="fas fa-comments"></i>
+                <span class="chat-notification">1</span>
+            </div>
+            <div class="chat-window">
+                <div class="chat-header">
+                    <h4>Live Support</h4>
+                    <button class="chat-close" onclick="toggleChat()">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="chat-messages">
+                    <div class="chat-message bot">
+                        <div class="message-avatar">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <div class="message-content">
+                            <p>Hi! I'm here to help. What can I assist you with today?</p>
+                            <span class="message-time">Just now</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chat-input">
+                    <input type="text" placeholder="Type your message..." id="chatInput">
+                    <button onclick="sendChatMessage()">
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
                 </div>
             </div>
         </div>
